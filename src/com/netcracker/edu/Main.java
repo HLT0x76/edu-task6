@@ -29,7 +29,7 @@ public class Main {
     }
 
     // On r1 > 1500 system may seem unresponsive for quite a while
-    System.out.print("With threading (naive): ");
+    System.out.print("With threading (thread per row): ");
     startTime = System.currentTimeMillis();
     result = ArraysMultiplierRowPerThread.multiply(a, b);
     System.out.printf("%d ms\n", System.currentTimeMillis() - startTime);
@@ -37,7 +37,7 @@ public class Main {
       ArraysUtils.printArray("Result: ", result);
     }
 
-    System.out.print("With threading (batches): ");
+    System.out.print("With threading (thread per batch): ");
     startTime = System.currentTimeMillis();
     result = ArraysMultiplierBatchPerThread.multiply(a, b);
     System.out.printf("%d ms\n", System.currentTimeMillis() - startTime);
